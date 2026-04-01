@@ -9,45 +9,40 @@
     <h1>Teahse rwill is the .....</h1>
 </body>
 </html>
-document.addEventListener('DOMContentLoaded', () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbaaz Ulhaq | Cloud Developer</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1d; color: white; padding: 50px; }
+        #typewriter { color: #3498db; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
 
-    // --- 1. Typewriter Effect ---
-    const typewriterElement = document.getElementById('typewriter');
-    const textToType = "Cloud Developer.";
-    let charIndex = 0;
+    <h1 id="typewriter"></h1><span class="cursor">|</span>
 
-    function type() {
-        if (charIndex < textToType.length) {
-            typewriterElement.textContent += textToType.charAt(charIndex);
-            charIndex++;
-            setTimeout(type, 100); // adjust typing speed here (ms)
-        }
-    }
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typewriterElement = document.getElementById('typewriter');
+            const textToType = "Cloud Developer.";
+            let charIndex = 0;
 
-    // Start typing after a short delay
-    setTimeout(type, 1000); 
-
-
-    // --- 2. Scroll-Reveal Animation ---
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisibleThreshold = 100; // how many pixels from the bottom to trigger
-
-            if (elementTop < windowHeight - elementVisibleThreshold) {
-                element.classList.add('visible');
+            function type() {
+                if (charIndex < textToType.length) {
+                    typewriterElement.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100);
+                }
             }
+
+            // Start typing after 1 second
+            setTimeout(type, 1000);
         });
-    };
-
-    // Run once on load to show any elements already in view
-    revealOnScroll();
-
-    // Attach to scroll event
-    window.addEventListener('scroll', revealOnScroll);
-
-});
+    </script>
+</body>
+</html>
