@@ -9,14 +9,11 @@
 
 <style>
 :root {
-  /* --- COLOUR PALETTE UPDATE --- */
-  /* We are switching to deep, sapphire blues to match the photo */
-  --bg: #030712;         /* Near black, deep space background */
-  --card: #111827;       /* Dark gray for cards */
-  --accent: #2563eb;     /* Professional deep blue (tunic match) */
-  --accent-light: #60a5fa; /* A lighter blue for contrast */
-  --text: #f9fafb;       /* Pure white text */
-  --text-muted: #9ca3af; /* Muted gray text */
+  --bg: #030712;         
+  --card: #111827;       
+  --accent: #2563eb;     
+  --text: #f9fafb;       
+  --text-muted: #9ca3af; 
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -29,15 +26,14 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Navigation --- */
 nav {
   display:flex;
   justify-content:space-between;
   padding:25px 40px;
   position:sticky;
   top:0;
-  background: rgba(3, 7, 18, 0.9); /* Transparent to show content */
-  backdrop-filter: blur(10px);     /* Blurs background on scroll */
+  background: rgba(3, 7, 18, 0.9);
+  backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid #1f2937;
 }
@@ -48,174 +44,90 @@ nav a {
   text-decoration:none;
   transition:0.3s;
   font-weight: 500;
-  font-size: 0.9rem;
 }
 
-nav a:hover { 
-  color: var(--accent);
-}
+nav a:hover { color: var(--accent); }
 
-nav .brand {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-/* --- Hero Section --- */
 .hero {
   text-align:center;
-  padding:140px 20px 80px 20px; /* Adjust padding for sticky nav */
+  padding:120px 20px 60px 20px;
   animation: fadeIn 1s ease-out;
 }
 
 .hero img {
-  width:180px;
-  height:180px;
-  object-fit: cover; /* ESSENTIAL: Ensures image doesn't stretch */
+  width:200px;
+  height:200px;
+  object-fit: cover;
   border-radius:50%;
-  border:5px solid var(--accent); /* Matches your tunic blue */
-  margin-bottom:25px;
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.3); /* Soft blue shadow */
+  border:4px solid var(--accent);
+  margin-bottom:20px;
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
 }
 
-.hero h1 { 
-  font-size:3.5rem; 
-  margin-bottom: 10px; 
-  line-height: 1.1;
-}
+.hero h1 { font-size:3rem; margin-bottom: 10px; }
 
-/* Updated Typewriter styling */
 #typewriter { 
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--accent); 
   font-weight: 600; 
-  min-height: 1.4em; 
-  margin-bottom: 30px;
+  min-height: 1.4em;
+  margin-bottom: 20px;
 }
 
-/* --- Key Sections --- */
 section {
-  padding:100px 20px;
+  padding:80px 20px;
   max-width:900px;
   margin:auto;
 }
 
 h2 {
-  font-size: 2.2rem;
-  margin-bottom:40px;
-  position: relative;
+  font-size: 2rem;
+  margin-bottom:30px;
+  border-bottom:3px solid var(--accent);
   display:inline-block;
-  color: var(--text);
 }
 
-/* Decorative underline */
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
-  margin-top: 10px;
-  border-radius: 2px;
-}
-
-/* --- Updated Cards (Smooth Hover) --- */
 .card {
   background: var(--card);
-  padding:35px;
-  border-radius:16px;
+  padding:30px;
+  border-radius:15px;
   margin-top:20px;
-  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy feel */
+  transition: 0.4s ease;
   opacity:0;
-  transform:translateY(40px);
-  border: 1px solid rgba(255,255,255,0.03);
+  transform:translateY(30px);
 }
 
-/* Visible class added by JavaScript */
 .card.show {
   opacity:1;
   transform:translateY(0);
 }
 
-.card:hover {
-  transform:translateY(-12px);
-  border-color: var(--accent);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-}
-
-.card h3 {
-  color: var(--text);
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-}
-
-.card p {
-  color: var(--text-muted);
-  font-weight: 300;
-  line-height: 1.7;
-}
-
-/* --- Technical Skills Update --- */
 .skills span {
   display:inline-block;
-  border:1px solid rgba(255,255,255,0.05); /* subtle background */
-  padding:10px 18px;
-  margin:10px;
-  border-radius:30px;
-  color:var(--text-muted);
-  transition:0.3s;
-  font-weight: 500;
-  background: #1f2937; /* Very dark background */
+  background: #1f2937;
+  padding:8px 16px;
+  margin:5px;
+  border-radius:20px;
+  color:var(--accent);
+  border: 1px solid var(--accent);
 }
 
-.skills span:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  transform: scale(1.05);
-}
-
-/* --- Call to Action Buttons --- */
 .btn {
   display:inline-block;
-  margin-top:30px;
-  padding:14px 32px;
+  margin-top:20px;
+  padding:12px 25px;
   background:var(--accent);
-  color:#fff; /* Contrast text */
+  color:white;
   border-radius:30px;
   text-decoration:none;
   font-weight: 600;
   transition:0.3s;
-  margin-right: 15px;
 }
 
-.btn:hover {
-  transform:scale(1.05);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3); /* blue shadow */
-}
-
-/* Secondary Button (Contact) */
-.btn-contact {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-}
-
-.btn-contact:hover {
-  background: rgba(37, 99, 235, 0.05);
-}
-
-/* --- Footer --- */
-footer {
-  text-align:center;
-  padding:50px 20px;
-  color:#4b5563;
-  border-top: 1px solid #1f2937;
-  font-size: 0.9rem;
-}
+.btn:hover { transform:scale(1.05); }
 
 @keyframes fadeIn {
-  from { opacity:0; transform:translateY(30px);} 
+  from { opacity:0; transform:translateY(20px);} 
   to { opacity:1; transform:translateY(0);} 
 }
 </style>
@@ -224,7 +136,7 @@ footer {
 <body>
 
 <nav>
-  <div class="brand">AUH.</div>
+  <div style="font-weight:700; font-size:1.5rem">AUH.</div>
   <div>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -234,98 +146,66 @@ footer {
 </nav>
 
 <div class="hero">
-  <img src="arbaaz.jpg" alt="Arbaaz Ul Haq">
+  <img src="IMG_7031.jpg" alt="Arbaaz Ul Haq">
   <h1>Arbaaz Ul Haq</h1>
   <div id="typewriter"></div>
-  <a href="#projects" class="btn">View My Work</a>
+  <a href="#projects" class="btn">Explore Projects</a>
 </div>
 
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
-    <p style="margin-bottom:15px">
-      I am a 2nd year Computer Science student based in the UK with a strong interest in cloud computing and software development.
-    </p>
-    <p style="margin-bottom:15px">
-      I recently earned my <strong>AWS Certified Cloud Practitioner</strong> certification and I'm currently building real-world projects using AWS services like S3, Lambda, and API Gateway.
-    </p>
-    <p>
-      My goal is to become a Cloud Engineer, architecting scalable systems that solve complex problems.
-    </p>
+    <p>I am a 2nd year Computer Science student in the UK and an <strong>AWS Certified Cloud Practitioner</strong>. I specialize in building serverless architectures and scalable cloud solutions.</p>
   </div>
 </section>
 
 <section id="projects">
-  <h2>Featured Projects</h2>
-
+  <h2>Projects</h2>
   <div class="card">
-    <h3>Serverless Backend</h3>
-    <p>Currently building a scalable backend for a dynamic data application using AWS Lambda, DynamoDB, and API Gateway.</p>
-  </div>
-
-  <div class="card">
-    <h3>Professional Portfolio</h3>
-    <p>A modern, responsive portfolio built with advanced CSS and JavaScript (like Intersection Observer for scroll animations).</p>
+    <h3>AWS Serverless App</h3>
+    <p>Using Lambda, API Gateway, and S3 to build high-availability backends.</p>
   </div>
 </section>
 
 <section id="skills">
-  <h2>Cloud Technical Stack</h2>
+  <h2>Technical Skills</h2>
   <div class="skills">
-    <span>AWS (Lambda, S3, RDS)</span>
-    <span>Azure (Core Services)</span>
-    <span>Python (Boto3)</span>
-    <span>JavaScript (Node.js)</span>
-    <span>Git & CI/CD</span>
+    <span>AWS</span>
+    <span>Python</span>
+    <span>JavaScript</span>
     <span>Terraform</span>
+    <span>Docker</span>
   </div>
 </section>
 
 <section id="contact" style="text-align:center">
-  <h2>Start a Conversation</h2>
-  <p style="margin-bottom:20px; color:var(--text-muted)">I am currently seeking internships and full-time cloud roles.</p>
+  <h2>Contact</h2>
   <a href="mailto:your-email@example.com" class="btn">Email Me</a>
-  <a href="#" class="btn btn-contact">LinkedIn</a>
+  <a href="#" class="btn" style="background:transparent; border:1px solid var(--accent); color:var(--accent)">LinkedIn</a>
 </section>
 
-<footer>
-  <p>© 2026 Arbaaz Ul Haq | UK-Based Cloud Engineer</p>
-  <p style="margin-top: 5px; font-weight: 300;">Photo: sapphire blue tunic match</p>
-</footer>
-
 <script>
-// --- Typewriter Effect ---
 const textElement = document.getElementById('typewriter');
-const textToType = "AWS Certified Cloud Practitioner ☁️";
-let index = 0;
+const text = "AWS Certified Cloud Practitioner ☁️";
+let i = 0;
 
 function type() {
-  if (index < textToType.length) {
-    textElement.innerHTML += textToType.charAt(index);
-    index++;
+  if (i < text.length) {
+    textElement.innerHTML += text.charAt(i);
+    i++;
     setTimeout(type, 100);
   }
 }
 
-// --- Scroll Reveal Logic (Using Intersection Observer) ---
-// This is more professional than window.scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('show');
   });
-}, { threshold: 0.1 }); // triggers when 10% of card is visible
+}, { threshold: 0.1 });
 
-// Attach observer to all cards
-document.querySelectorAll('.card').forEach(card => {
-  observer.observe(card);
-});
+document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
-// Start Typewriter on load
-window.addEventListener('load', () => {
-    type();
-});
+window.onload = type;
 </script>
 
 </body>
