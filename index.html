@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arbaaz Ul Haq | Cloud Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -15,113 +15,120 @@
   --text: #f8fafc;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
   color: var(--text);
+  scroll-behavior: smooth;
 }
 
-/* NAV */
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  position:sticky;
+  top:0;
+  background: rgba(15,23,42,0.9);
 }
 
 nav a {
   color: var(--text);
-  margin-left: 20px;
-  text-decoration: none;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-nav a:hover {
-  color: var(--accent);
-}
+nav a:hover { color: var(--accent); }
 
-/* HERO */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
+  text-align:center;
+  padding:100px 20px;
+  animation: fadeIn 1s ease-in;
 }
 
 .hero img {
-  width: 140px;
-  border-radius: 50%;
-  border: 3px solid var(--accent);
-  margin-bottom: 20px;
+  width:140px;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  margin-bottom:20px;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-}
+.hero h1 { font-size:2.5rem; }
+.hero p { margin-top:10px; color:#94a3b8; }
 
-.hero p {
-  margin-top: 10px;
-  color: #94a3b8;
-}
-
-/* SECTION */
 section {
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: auto;
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
 }
 
 h2 {
-  margin-bottom: 20px;
-  border-bottom: 2px solid var(--accent);
-  display: inline-block;
+  margin-bottom:20px;
+  border-bottom:2px solid var(--accent);
+  display:inline-block;
 }
 
-/* CARDS */
 .card {
   background: var(--card);
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 15px;
-  transition: 0.3s;
+  padding:20px;
+  border-radius:10px;
+  margin-top:15px;
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.card.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform:translateY(-8px) scale(1.02);
 }
 
-/* SKILLS */
 .skills span {
-  display: inline-block;
-  border: 1px solid var(--accent);
-  padding: 6px 10px;
-  margin: 5px;
-  border-radius: 20px;
-  color: var(--accent);
+  display:inline-block;
+  border:1px solid var(--accent);
+  padding:6px 10px;
+  margin:5px;
+  border-radius:20px;
+  color:var(--accent);
+  transition:0.3s;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
+.skills span:hover {
   background: var(--accent);
-  color: black;
-  border-radius: 20px;
-  text-decoration: none;
+  color:black;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  background:var(--accent);
+  color:black;
+  border-radius:20px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
 .btn:hover {
-  box-shadow: 0 0 10px var(--accent);
+  transform:scale(1.05);
+  box-shadow:0 0 10px var(--accent);
 }
 
-/* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px;
-  color: #94a3b8;
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(20px);} 
+  to { opacity:1; transform:translateY(0);} 
 }
 </style>
 </head>
@@ -133,6 +140,7 @@ footer {
   <div>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -140,16 +148,22 @@ footer {
 <div class="hero">
   <img src="arbaaz.jpg">
   <h1>Arbaaz Ul Haq</h1>
-  <p>AWS Certified Cloud Practitioner ☁️</p>
-  <p>Computer Science Student building cloud & web applications</p>
+  <p><strong>AWS Certified Cloud Practitioner ☁️</strong></p>
+  <p>Aspiring Cloud & Full-Stack Developer</p>
+  <a href="#projects" class="btn">View My Work</a>
 </div>
 
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
     <p>
-      I’m a Computer Science student passionate about cloud computing and full-stack development.
-      I recently achieved my AWS certification and enjoy building scalable applications using modern technologies.
+      I am a 2nd year Computer Science student based in the UK with a strong interest in cloud computing and software development.
+    </p>
+    <p>
+      I recently earned my AWS Certified Cloud Practitioner certification and I'm currently building real-world projects using AWS services like S3, Lambda, and API Gateway.
+    </p>
+    <p>
+      My goal is to become a cloud engineer and work on scalable systems that solve real-world problems.
     </p>
   </div>
 </section>
@@ -159,17 +173,17 @@ footer {
 
   <div class="card">
     <h3>Portfolio Website</h3>
-    <p>Responsive website built using HTML, CSS, and JavaScript.</p>
+    <p>Modern responsive portfolio built with HTML, CSS, and JavaScript.</p>
   </div>
 
   <div class="card">
-    <h3>Serverless AWS App (Coming Soon)</h3>
-    <p>Building a cloud-based app using AWS Lambda and API Gateway.</p>
+    <h3>Serverless AWS App</h3>
+    <p>Currently building a scalable backend using AWS Lambda and API Gateway.</p>
   </div>
 
 </section>
 
-<section>
+<section id="skills">
   <h2>Skills</h2>
   <div class="skills">
     <span>HTML</span>
@@ -192,22 +206,15 @@ footer {
 </footer>
 
 <script>
-// simple fade-in effect
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', () => {
   cards.forEach(card => {
     const top = card.getBoundingClientRect().top;
     if (top < window.innerHeight - 50) {
-      card.style.opacity = 1;
-      card.style.transform = "translateY(0)";
+      card.classList.add('show');
     }
   });
-});
-
-cards.forEach(c => {
-  c.style.opacity = 0;
-  c.style.transform = "translateY(20px)";
 });
 </script>
 
