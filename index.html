@@ -9,3 +9,45 @@
     <h1>Teahse rwill is the .....</h1>
 </body>
 </html>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. Typewriter Effect ---
+    const typewriterElement = document.getElementById('typewriter');
+    const textToType = "Cloud Developer.";
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < textToType.length) {
+            typewriterElement.textContent += textToType.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 100); // adjust typing speed here (ms)
+        }
+    }
+
+    // Start typing after a short delay
+    setTimeout(type, 1000); 
+
+
+    // --- 2. Scroll-Reveal Animation ---
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisibleThreshold = 100; // how many pixels from the bottom to trigger
+
+            if (elementTop < windowHeight - elementVisibleThreshold) {
+                element.classList.add('visible');
+            }
+        });
+    };
+
+    // Run once on load to show any elements already in view
+    revealOnScroll();
+
+    // Attach to scroll event
+    window.addEventListener('scroll', revealOnScroll);
+
+});
