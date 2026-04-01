@@ -110,6 +110,26 @@ h2 {
   color: var(--accent);
 }
 
+/* CONTACT */
+.contact-box {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact-item {
+  background:#0f172a;
+  padding:15px;
+  border-radius:8px;
+  border:1px solid var(--accent);
+}
+
+.contact-item a {
+  color: var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
 /* FOOTER */
 footer {
   text-align:center;
@@ -127,6 +147,7 @@ footer {
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -159,6 +180,25 @@ footer {
     <span>JavaScript</span>
     <span>Docker</span>
     <span>Terraform</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <div class="contact-box">
+      
+      <div class="contact-item">
+        🇬🇧 UK Number:<br>
+        <a href="tel:+447900631374">+44 7900 631374</a>
+      </div>
+
+      <div class="contact-item">
+        🇮🇳 India Number:<br>
+        <a href="tel:+918332909784">+91 83329 09784</a>
+      </div>
+
+    </div>
   </div>
 </section>
 
