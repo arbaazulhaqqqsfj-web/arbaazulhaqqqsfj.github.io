@@ -1,9 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Arbaaz Ul Haq | Cloud Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,9 +17,9 @@
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,20 +30,21 @@ body {
 
 /* NAV */
 nav {
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-  position:fixed;
-  width:100%;
-  top:0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   background: rgba(11,15,25,0.9);
   backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 nav a {
   color: var(--muted);
-  margin-left:20px;
-  text-decoration:none;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -53,16 +53,26 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hero img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size:3rem;
+  font-size: 3rem;
 }
 
 .hero span {
@@ -70,70 +80,70 @@ nav a:hover {
 }
 
 .btn {
-  margin-top:20px;
-  padding:12px 25px;
+  margin-top: 20px;
+  padding: 12px 25px;
   background: var(--accent);
-  border:none;
-  border-radius:30px;
-  color:white;
-  text-decoration:none;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* SECTIONS */
 section {
-  padding:80px 20px;
-  max-width:900px;
-  margin:auto;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
 h2 {
-  margin-bottom:20px;
-  border-bottom:2px solid var(--accent);
-  display:inline-block;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
 }
 
 /* CARD */
 .card {
   background: var(--card);
-  padding:25px;
-  border-radius:10px;
-  margin-top:20px;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 /* SKILLS */
 .skills span {
-  display:inline-block;
-  margin:5px;
-  padding:8px 15px;
-  border:1px solid var(--accent);
-  border-radius:20px;
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
   color: var(--accent);
 }
 
 /* CONTACT */
 .contact-box {
-  display:flex;
-  flex-direction:column;
-  gap:15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contact-item {
-  background:#0f172a;
-  padding:15px;
-  border-radius:8px;
-  border:1px solid var(--accent);
+  background: #0f172a;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
 }
 
 .contact-item a {
   color: var(--accent);
-  text-decoration:none;
-  font-weight:600;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* FOOTER */
 footer {
-  text-align:center;
-  padding:30px;
+  text-align: center;
+  padding: 30px;
   color: var(--muted);
 }
 </style>
@@ -151,19 +161,29 @@ footer {
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
+  <img src="IMG_7031.jpg" alt="Arbaaz Profile Picture">
   <h1>Arbaaz Ul Haq</h1>
   <p><span>Cloud Developer ☁️</span></p>
   <a href="#projects" class="btn">View Projects</a>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About</h2>
   <div class="card">
-    <p>I’m a Computer Science student and AWS Certified Cloud Practitioner focused on building scalable cloud systems and serverless applications.</p>
+    <p>
+      I am a second-year student at CU London with a strong interest in cloud computing and modern IT infrastructure. 
+      I have completed the AWS Certified Cloud Practitioner qualification, giving me a solid foundation in core AWS services, cloud concepts, security, and cost management. 
+      I am particularly interested in developing my skills in cloud architecture and scalable systems. 
+      Alongside my studies, I have a keen interest in sports, which has helped me build teamwork, discipline, and a strong work ethic. 
+      I am now looking to gain practical experience in cloud-related roles where I can continue to learn and contribute.
+    </p>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="card">
@@ -172,6 +192,7 @@ footer {
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills">
@@ -183,11 +204,12 @@ footer {
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="card">
     <div class="contact-box">
-      
+
       <div class="contact-item">
         🇬🇧 UK Number:<br>
         <a href="tel:+447900631374">+44 7900 631374</a>
@@ -208,4 +230,3 @@ footer {
 
 </body>
 </html>
-```
